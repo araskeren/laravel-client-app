@@ -23,7 +23,7 @@ Route::get('/redirect', function (Request $request) {
     , '='), '+/', '-_');
 
     $query = http_build_query([
-        'client_id' => '9c487ebd-f10e-41ea-b8b0-aa5b28077143',
+        'client_id' => '9c488283-2764-4726-9934-037cd6d43d19',
         'redirect_uri' => 'http://localhost:8001/auth/callback',
         'response_type' => 'code',
         'scope' => '*',
@@ -51,7 +51,7 @@ Route::get('/auth/callback', function (Request $request) {
 
     $response = Http::asForm()->post('http://localhost:8000/oauth/token', [
         'grant_type' => 'authorization_code',
-        'client_id' => '9c487ebd-f10e-41ea-b8b0-aa5b28077143',
+        'client_id' => '9c488283-2764-4726-9934-037cd6d43d19',
         'redirect_uri' => 'http://localhost:8001/auth/callback',
         'code_verifier' => $codeVerifier,
         'code' => $request->code,
